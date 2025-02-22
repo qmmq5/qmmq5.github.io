@@ -1,22 +1,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>QQQ</title>
-    <link>https://qmmq5.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on QQQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>©2025 Notepadium.</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 17:53:55 -0500</lastBuildDate>
     
-        <atom:link href="https://qmmq5.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>First Post</title>
+      <link>http://localhost:1313/posts/first-post/</link>
+      <pubDate>Sat, 22 Feb 2025 17:53:55 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;h2 id=&#34;---&#34;&gt;&amp;mdash;&lt;/h2&gt;
+&lt;p&gt;link &amp;mdash;&amp;gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>About</title>
-      <link>https://qmmq5.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://qmmq5.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;img src=&#34;https://www.photopills.com/sites/default/files/calculators/2014/guidinglighttothestars.jpg&#34; alt=&#34;Getting started&#34; /&gt;</description>
     </item>
     
