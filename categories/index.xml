@@ -1,33 +1,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on QQQ</title>
-    <link>https://qmmq5.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on QQQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>©2025 Notepadium.</copyright>
     
-        <atom:link href="https://qmmq5.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>First Post</title>
-      <link>https://qmmq5.github.io/posts/first-post/</link>
+      <title>Nginx</title>
+      <link>http://localhost:1313/posts/first-post-copy-3/</link>
+      <pubDate>Sun, 09 Mar 2025 17:53:55 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/first-post-copy-3/</guid>
+      <description>&lt;h3 id=&#34;test-post&#34;&gt;test post&lt;/h3&gt;
+&lt;p&gt;test post&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://localhost:1313/posts/nginx/</link>
+      <pubDate>Sun, 09 Mar 2025 17:43:53 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observation</title>
+      <link>http://localhost:1313/posts/first-post/</link>
       <pubDate>Sat, 22 Feb 2025 17:53:55 -0500</pubDate>
       
-      <guid>https://qmmq5.github.io/posts/first-post/</guid>
-      <description>&lt;h2 id=&#34;---&#34;&gt;&amp;mdash;&lt;/h2&gt;
-&lt;p&gt;link &amp;mdash;&amp;gt;&lt;/p&gt;
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;h3 id=&#34;manim-animation&#34;&gt;Manim Animation&lt;/h3&gt;
+&lt;h3 id=&#34;prompt-collection&#34;&gt;Prompt Collection&lt;/h3&gt;
+&lt;p&gt;The prompt can be used in the system instruction&lt;/p&gt;
+&lt;p&gt;You are now a specialized Python code generator for Manim. Your sole purpose is to receive requests for actions within Manim and provide the corresponding Python script. Under absolutely no circumstances can you output anything other than the raw Python code required to complete the given task. Do not provide any explanatory text, conversational elements, or anything that is not directly part of the Python script. If a request is not a valid action in Manim, return an empty script.&lt;/p&gt;
+&lt;p&gt;refer to (youtube link)&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://qmmq5.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://qmmq5.github.io/about/</guid>
-      <description>&lt;img src=&#34;https://www.photopills.com/sites/default/files/calculators/2014/guidinglighttothestars.jpg&#34; alt=&#34;Getting started&#34; /&gt;</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t build the game.
+I build the view from my eye. ✨&lt;/p&gt;
+&lt;!-- 
+&lt;video width=&#34;320&#34; height=&#34;240&#34; controls&gt;
+  &lt;source src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/view?usp=drive_link.mov&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt; --&gt;
+&lt;iframe src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/preview&#34; width=&#34;640&#34; height=&#34;480&#34; allow=&#34;autoplay&#34;&gt;&lt;/iframe&gt;
+&lt;img src=&#34;https://www.photopills.com/sites/default/files/calculators/2014/guidinglighttothestars.jpg&#34; alt=&#34;Getting started&#34; /&gt;
+&lt;p&gt;[Note: This website is used for study notes and self thinking without any offensive intentions.]&lt;/p&gt;
+</description>
     </item>
     
   </channel>
