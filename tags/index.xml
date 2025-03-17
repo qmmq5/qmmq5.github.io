@@ -11,13 +11,23 @@
     
     
     <item>
-      <title>Nginx</title>
-      <link>http://localhost:1313/posts/first-post-copy-3/</link>
-      <pubDate>Sun, 09 Mar 2025 17:53:55 -0500</pubDate>
+      <title>Hugo usage</title>
+      <link>http://localhost:1313/posts/github-deployment/</link>
+      <pubDate>Sun, 09 Mar 2025 23:22:54 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/first-post-copy-3/</guid>
-      <description>&lt;h3 id=&#34;test-post&#34;&gt;test post&lt;/h3&gt;
-&lt;p&gt;test post&lt;/p&gt;
+      <guid>http://localhost:1313/posts/github-deployment/</guid>
+      <description>&lt;h3 id=&#34;hugo-deploy-on-github&#34;&gt;Hugo deploy on Github&lt;/h3&gt;
+&lt;p&gt;Created two repositories, blog and actual blog with the github name (githubname.io). Set the repositories to public, the second one
+is actual blog with the githubname url.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;clone the blog repo to the local&lt;/li&gt;
+&lt;li&gt;create the new hugo site using hugo new site [. (current direcoty)] or [name of folder]&lt;/li&gt;
+&lt;li&gt;cd themes and clone specific theme from github, and config toml file to set theme&lt;/li&gt;
+&lt;li&gt;hugo server to test local blog server&lt;/li&gt;
+&lt;li&gt;using hugo new posts/post_name.md to add content&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;refer to &lt;a href=&#34;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;amp;t=83s&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;t=83s&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -40,7 +50,7 @@
 &lt;h3 id=&#34;prompt-collection&#34;&gt;Prompt Collection&lt;/h3&gt;
 &lt;p&gt;The prompt can be used in the system instruction&lt;/p&gt;
 &lt;p&gt;You are now a specialized Python code generator for Manim. Your sole purpose is to receive requests for actions within Manim and provide the corresponding Python script. Under absolutely no circumstances can you output anything other than the raw Python code required to complete the given task. Do not provide any explanatory text, conversational elements, or anything that is not directly part of the Python script. If a request is not a valid action in Manim, return an empty script.&lt;/p&gt;
-&lt;p&gt;refer to (youtube link)&lt;/p&gt;
+&lt;p&gt;refer to &lt;a href=&#34;https://www.youtube.com/watch?v=ytomieYqUCQ&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://www.youtube.com/watch?v=ytomieYqUCQ&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -50,8 +60,7 @@
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;I don&amp;rsquo;t build the game.
-I build the view from my eye. ✨&lt;/p&gt;
+      <description>&lt;p&gt;I build the view from my eye. ✨&lt;/p&gt;
 &lt;!-- 
 &lt;video width=&#34;320&#34; height=&#34;240&#34; controls&gt;
   &lt;source src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/view?usp=drive_link.mov&#34; type=&#34;video/mp4&#34;&gt;
