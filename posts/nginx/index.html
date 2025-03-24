@@ -13,7 +13,30 @@ used for load balancing, caching, SSL termination, enhancing sercurity
 
 The functionalities of Nginx as a proxy server
 
-load balancing (round-robin or other algorithm)
+
+load balancing
+
+  
+      
+          static
+          dynamic
+      
+  
+  
+      
+          round robin
+          least connection method
+      
+      
+          weighted round-robin
+          least response time method
+      
+      
+          source ip hash
+          
+      
+  
+
 http {
    upstream [] {
        server ...
@@ -26,18 +49,8 @@ http {
     }
 }
 
-caching (without request to server and database)
-security
-compression and segmentation
 
-Nginx:
-
-Load balancing across multiple servers
-High performance web server (ideal for serving static content)
-Reverse proxy forwarding to appropriate back-end server
-sercurity features (SSL termination)
-
-Node.js:"><title>Nginx&nbsp;&ndash;&nbsp;QQQ</title><link rel="stylesheet" href="/css/core.min.003a667cf21024ef30f2985fb57c9bd6f6873cf899ee14e9302e68e9f04b681df9440cec4ebdaa101dca533a262c242f.css" integrity="sha384-ADpmfPIQJO8w8phftXyb1vaHPPiZ7hTpMC5o6fBLaB35RAzsTr2qEB3KUzomLCQv"><meta name="twitter:card" content="summary" />
+caching (without request to server and database)"><title>Nginx&nbsp;&ndash;&nbsp;QQQ</title><link rel="stylesheet" href="/css/core.min.003a667cf21024ef30f2985fb57c9bd6f6873cf899ee14e9302e68e9f04b681df9440cec4ebdaa101dca533a262c242f.css" integrity="sha384-ADpmfPIQJO8w8phftXyb1vaHPPiZ7hTpMC5o6fBLaB35RAzsTr2qEB3KUzomLCQv"><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Nginx" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">QQQ</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div><div class="site slogan"><span class="title">nerd nerd</span></div></section><section id="content"><div class="article-container"><section class="article header">
@@ -53,7 +66,30 @@ Node.js:"><title>Nginx&nbsp;&ndash;&nbsp;QQQ</title><link rel="stylesheet" href=
 </ol>
 <p>The functionalities of Nginx as a proxy server</p>
 <ol>
-<li>load balancing (round-robin or other algorithm)
+<li>
+<p>load balancing</p>
+<table>
+  <thead>
+      <tr>
+          <th>static</th>
+          <th>dynamic</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>round robin</td>
+          <td>least connection method</td>
+      </tr>
+      <tr>
+          <td>weighted round-robin</td>
+          <td>least response time method</td>
+      </tr>
+      <tr>
+          <td>source ip hash</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
 <pre tabindex="0"><code>http {
    upstream [] {
        server ...
@@ -66,9 +102,15 @@ Node.js:"><title>Nginx&nbsp;&ndash;&nbsp;QQQ</title><link rel="stylesheet" href=
     }
 }
 </code></pre></li>
-<li>caching (without request to server and database)</li>
-<li>security</li>
-<li>compression and segmentation</li>
+<li>
+<p>caching (without request to server and database)</p>
+</li>
+<li>
+<p>security</p>
+</li>
+<li>
+<p>compression and segmentation</p>
+</li>
 </ol>
 <p>Nginx:</p>
 <ol>
@@ -85,7 +127,7 @@ Node.js:"><title>Nginx&nbsp;&ndash;&nbsp;QQQ</title><link rel="stylesheet" href=
 <li>Build custom middleware (managing Gzip compression)</li>
 </ol>
 <p>Nginx can be used as an ingress controller in kubernetes</p>
-</article><section class="article author"><img alt="" loading="lazy" class="avatar" src="/img/avatar.jpg"/><div class="details"><a class="item" href="https://github.com/qmmq5" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;qmmq5</a><a class="item" href="mailto:XXX@mail.com" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;XXX@mail.com</a></div>
+</article><section class="article labels"><a class="category" href=/categories/devops/>DevOps</a></section><section class="article author"><img alt="" loading="lazy" class="avatar" src="/img/avatar.jpg"/><div class="details"><a class="item" href="https://github.com/qmmq5" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;qmmq5</a><a class="item" href="mailto:XXX@mail.com" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;XXX@mail.com</a></div>
 </section>
 </div>
 <div class="article bottom"><section class="article navigation"><p><a class="link" href="/posts/github-deployment/"><span class="iconfont icon-article"></span>Hugo usage</a></p><p><a class="link" href="/posts/first-post/"><span class="iconfont icon-article"></span>Observation</a></p></section></div></section><section id="footer"><div class="footer-wrap">

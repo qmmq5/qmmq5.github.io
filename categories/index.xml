@@ -6,6 +6,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>©2025 Notepadium.</copyright>
+    <lastBuildDate>Sun, 09 Mar 2025 17:43:53 -0400</lastBuildDate>
     
         <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -81,7 +82,30 @@ is actual blog with the githubname url.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;The functionalities of Nginx as a proxy server&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;load balancing (round-robin or other algorithm)
+&lt;li&gt;
+&lt;p&gt;load balancing&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;static&lt;/th&gt;
+          &lt;th&gt;dynamic&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;round robin&lt;/td&gt;
+          &lt;td&gt;least connection method&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;weighted round-robin&lt;/td&gt;
+          &lt;td&gt;least response time method&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;source ip hash&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http {
    upstream [] {
        server ...
@@ -94,9 +118,15 @@ is actual blog with the githubname url.&lt;/p&gt;
     }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;caching (without request to server and database)&lt;/li&gt;
-&lt;li&gt;security&lt;/li&gt;
-&lt;li&gt;compression and segmentation&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;caching (without request to server and database)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;security&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;compression and segmentation&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Nginx:&lt;/p&gt;
 &lt;ol&gt;
@@ -137,7 +167,7 @@ is actual blog with the githubname url.&lt;/p&gt;
       
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I build the view from my eye. ✨&lt;/p&gt;
-&lt;p&gt;travel dairy&lt;/p&gt;
+&lt;p&gt;travel diary&lt;/p&gt;
 &lt;!-- 
 &lt;video width=&#34;320&#34; height=&#34;240&#34; controls&gt;
   &lt;source src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/view?usp=drive_link.mov&#34; type=&#34;video/mp4&#34;&gt;

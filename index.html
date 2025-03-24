@@ -20,9 +20,9 @@ hugo server or hugo server -D to test local blog server
             <p class="note title">Nginx</p><p class="note date">Sunday, March 9, 2025</p><p class="note content">Forward proxy
 Primiarily serves clients used for anonymity, content filtering, bypassing restrictions Reverse proxy
 Primiarily serves servers used for load balancing, caching, SSL termination, enhancing sercurity The functionalities of Nginx as a proxy server
-load balancing (round-robin or other algorithm) http { upstream [] { server ... server ... server ... } server { ... } } caching (without request to server and database) security compression and segmentation Nginx:
-Load balancing across multiple servers High performance web server (ideal for serving static content) Reverse proxy forwarding to appropriate back-end server sercurity features (SSL termination) Node.js:
-<span class="mldr">&mldr;</span></p></a></li><li class="item">
+load balancing
+static dynamic round robin least connection method weighted round-robin least response time method source ip hash http { upstream [] { server ... server ... server ... } server { ... } } caching (without request to server and database)
+<span class="mldr">&mldr;</span></p></a><p class="note labels"><a class="category" href="/categories/devops/">DevOps</a></p></li><li class="item">
         
         <a class="note" href="/posts/first-post/">
         
