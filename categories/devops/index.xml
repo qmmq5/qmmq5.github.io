@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>database</title>
+      <link>http://localhost:1313/posts/database/</link>
+      <pubDate>Sat, 29 Mar 2025 23:44:01 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hugo usage</title>
       <link>http://localhost:1313/posts/github-deployment/</link>
       <pubDate>Sun, 09 Mar 2025 23:22:54 -0400</pubDate>
@@ -143,6 +152,12 @@ is actual blog with the githubname url.&lt;/p&gt;
 &lt;li&gt;Build custom middleware (managing Gzip compression)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Nginx can be used as an ingress controller in kubernetes&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;brief details for node&lt;/p&gt;
+&lt;p&gt;Node is a cross-platform, open-source javascript runtime environment&lt;/p&gt;
+&lt;img src=&#34;https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fmedium.com%2Fjspoint%2Fintroduction-to-node-js-a-beginners-guide-to-node-js-and-npm-eca9c408f9fe&amp;psig=AOvVaw2zdfaTZ9n04n6mwOgDZxbk&amp;ust=1743748127266000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBQQjRxqFwoTCKiik5Keu4wDFQAAAAAdAAAAABAP&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;blog%5cimage%5cnode-js.png&#34;
+        alt=&#34;node.js architecture&#34;/&gt;&lt;/p&gt;
 </description>
     </item>
     
