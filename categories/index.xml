@@ -18,7 +18,7 @@
       
       <guid>http://localhost:1313/posts/database/</guid>
       <description>&lt;h4 id=&#34;relational-database&#34;&gt;Relational database&lt;/h4&gt;
-&lt;p&gt;Sql: Mysql, postgresql&lt;/p&gt;
+&lt;p&gt;Sql (structured query language): Mysql, postgresql&lt;/p&gt;
 &lt;p&gt;The format of relational database is table&lt;/p&gt;
 &lt;h4 id=&#34;non-relational-database&#34;&gt;Non-relational database&lt;/h4&gt;
 &lt;p&gt;There are 4 types of non-relational database&lt;/p&gt;
