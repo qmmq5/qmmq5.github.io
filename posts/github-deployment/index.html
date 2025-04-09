@@ -18,8 +18,8 @@ cd themes and clone specific theme from github, and config toml file to set them
 hugo server or hugo server -D to test local blog server"><title>Hugo usage&nbsp;&ndash;&nbsp;QQQ</title><link rel="stylesheet" href="/css/core.min.003a667cf21024ef30f2985fb57c9bd6f6873cf899ee14e9302e68e9f04b681df9440cec4ebdaa101dca533a262c242f.css" integrity="sha384-ADpmfPIQJO8w8phftXyb1vaHPPiZ7hTpMC5o6fBLaB35RAzsTr2qEB3KUzomLCQv"><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Hugo usage" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">QQQ</span></a></span>
-        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div><div class="site slogan"><span class="title">nerd nerd</span></div></section><section id="content"><div class="article-container"><section class="article header">
-    <h1 class="article title">Hugo usage</h1><p class="article date">Sunday, March 9, 2025<span class="lastmod"> • edited Thursday, April 3, 2025</span></p></section><article class="article markdown-body"><h3 id="hugo-deploy-on-github">Hugo deploy on Github</h3>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div><div class="site slogan"><span class="title">maxwell and minikube</span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Hugo usage</h1><p class="article date">Sunday, March 9, 2025<span class="lastmod"> • edited Sunday, April 6, 2025</span></p></section><article class="article markdown-body"><h3 id="hugo-deploy-on-github">Hugo deploy on Github</h3>
 <p>Created two repositories, blog and actual blog with the github name (githubname.io). Set the repositories to public, the second one
 is actual blog with the githubname url.</p>
 <ol>
@@ -39,7 +39,7 @@ is actual blog with the githubname url.</p>
 <p>using hugo new posts/post_name.md to add content</p>
 </li>
 <li>
-<p>Set the production repo with main branch, add the a readme file to the second repo</p>
+<p>Set the production repo with main branch, add the a readme file to this repo.</p>
 <p><code>git checkout -b main</code></p>
 <p><code>touch README.md</code></p>
 </li>
@@ -65,7 +65,7 @@ is actual blog with the githubname url.</p>
 <p>refer to <a href="https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;t=83s"target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=LIFvgrRxdt4&t=83s</a></p>
 <hr>
 <h3 id="configure-the-toml-file">Configure the toml file</h3>
-<p>Add edited date in the post</p>
+<p>Added the last edited date behind the date created of each post</p>
 <pre tabindex="0"><code>enableGitInfo = true
 
 [frontmatter]

@@ -6,10 +6,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>©2025 Notepadium.</copyright>
-    <lastBuildDate>Sun, 09 Mar 2025 17:43:53 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 04 Apr 2025 00:29:08 -0500</lastBuildDate>
     
         <atom:link href="http://localhost:1313/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>http://localhost:1313/posts/kubernetes/</link>
+      <pubDate>Fri, 04 Apr 2025 00:29:08 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/kubernetes/</guid>
+      <description>&lt;h3 id=&#34;what-is-kubernetes&#34;&gt;What is Kubernetes?&lt;/h3&gt;
+&lt;p&gt;Kubernetes is an open-source platform that automates the deployment, management, and scaling of containerized applications. It&amp;rsquo;s a common tool to manage the microservices-based applications across various environments for mid and large size companies.&lt;/p&gt;
+&lt;p&gt;The core components of Kubernetes: a controle plane and one or more nodes. The following figures from official website introduced the architecture of kubernetes.&lt;/p&gt;
+&lt;div style=&#34;text-align:center&#34;&gt;
+&lt;img src=&#34;https://kubernetes.io/images/docs/components-of-kubernetes.svg&#34;&gt;
+&lt;em &gt;Figure 1. Components of Kubernetes&lt;/em&gt;
+&lt;/div&gt;
+&lt;p&gt;The second figure has more details to show in each node&lt;/p&gt;
+&lt;div style = &#34;text-align:center&#34;&gt;
+&lt;img src=&#34;https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg&#34;&gt;
+&lt;em &gt;Figure 2. Cluster Architecture&lt;/em&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;brief-details-of-each-components&#34;&gt;Brief details of each components&lt;/h4&gt;
+&lt;p&gt;Control Plane Components&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kube-apiserver: the core component server that exposes the Kubernetes HTTP API
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl api-resources
+&lt;/code&gt;&lt;/pre&gt;the above command can be used to check more information for kubernetes api, which includes namespace, apiversion,kind,etc.&lt;/li&gt;
+&lt;li&gt;etcd: consistent and highly-available key value store for all API server data&lt;/li&gt;
+&lt;li&gt;kube-scheduler: looks for pods not yet bound to a node, and assigns each Pod to a suitable node. [Pod is the smallest deployable unit in kubernetes, and not usually created directly]&lt;/li&gt;
+&lt;li&gt;kube-controller-manager: Runs controllers to implement Kubernetes API behavior&lt;/li&gt;
+&lt;li&gt;cloud-controller-manager (optional): integrates with underlying cloud providers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Node Components&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kubelet: ensures that Pods are running, including their containers.&lt;/li&gt;
+&lt;li&gt;kube-proxy (optional): Maintains network rules on nodes to implement Services.
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl status kube-proxy
+&lt;/code&gt;&lt;/pre&gt;check the statues of node&lt;/li&gt;
+&lt;li&gt;Container runtime: Software responsible for running containers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+</description>
+    </item>
     
     <item>
       <title>database</title>
@@ -43,7 +84,6 @@
 &lt;li&gt;Partition tolerance &amp;mdash;&amp;gt; Guaranteed properties are maintained even when network
 failures prevent some machines from communicating with others.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;[updated_04/03/2025]&lt;/p&gt;
 </description>
     </item>
     
@@ -73,7 +113,7 @@ is actual blog with the githubname url.&lt;/p&gt;
 &lt;p&gt;using hugo new posts/post_name.md to add content&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Set the production repo with main branch, add the a readme file to the second repo&lt;/p&gt;
+&lt;p&gt;Set the production repo with main branch, add the a readme file to this repo.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git checkout -b main&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;touch README.md&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -97,7 +137,14 @@ is actual blog with the githubname url.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;refer to &lt;a href=&#34;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;amp;t=83s&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;t=83s&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;hr&gt;
+&lt;h3 id=&#34;configure-the-toml-file&#34;&gt;Configure the toml file&lt;/h3&gt;
+&lt;p&gt;Added the last edited date behind the date created of each post&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;enableGitInfo = true
+
+[frontmatter]
+lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -180,12 +227,10 @@ is actual blog with the githubname url.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;Nginx can be used as an ingress controller in kubernetes&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;brief details for node&lt;/p&gt;
+&lt;p&gt;brief details for node.js&lt;/p&gt;
 &lt;p&gt;Node is a cross-platform, open-source javascript runtime environment&lt;/p&gt;
-&lt;!-- &lt;img src=&#34;https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fmedium.com%2Fjspoint%2Fintroduction-to-node-js-a-beginners-guide-to-node-js-and-npm-eca9c408f9fe&amp;psig=AOvVaw2zdfaTZ9n04n6mwOgDZxbk&amp;ust=1743748127266000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBQQjRxqFwoTCKiik5Keu4wDFQAAAAAdAAAAABAP&#34;&gt; --&gt;
 &lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg&#34;&gt;&lt;br&gt;
 source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg]&lt;/p&gt;
-&lt;!-- ![node.js architecture](blog\image\node-js.png) --&gt;
 </description>
     </item>
     
@@ -197,6 +242,7 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
       <guid>http://localhost:1313/posts/first-post/</guid>
       <description>&lt;h3 id=&#34;manim-animation&#34;&gt;Manim Animation&lt;/h3&gt;
 &lt;p&gt;Manim: A python library for creating animation&lt;/p&gt;
+&lt;p&gt;The stream feature performance of google AI studio with the following prompt is very interesting. It can assist developers and creators to make animations with less time.&lt;/p&gt;
 &lt;h3 id=&#34;prompt-collection&#34;&gt;Prompt Collection&lt;/h3&gt;
 &lt;p&gt;The prompt can be used in the system instruction of google AI studio&lt;/p&gt;
 &lt;p&gt;You are now a specialized Python code generator for Manim. Your sole purpose is to receive requests for actions within Manim and provide the corresponding Python script. Under absolutely no circumstances can you output anything other than the raw Python code required to complete the given task. Do not provide any explanatory text, conversational elements, or anything that is not directly part of the Python script. If a request is not a valid action in Manim, return an empty script.&lt;/p&gt;
@@ -217,6 +263,7 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
   &lt;source src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/view?usp=drive_link.mov&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt; --&gt;
 &lt;iframe src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/preview&#34; width=&#34;640&#34; height=&#34;480&#34; allow=&#34;autoplay&#34;&gt;&lt;/iframe&gt;
+&lt;hr&gt;
 &lt;img src=&#34;https://www.photopills.com/sites/default/files/calculators/2014/guidinglighttothestars.jpg&#34; alt=&#34;Getting started&#34; /&gt;
 &lt;p&gt;[Note: This website is used for study notes and self thinking without any offensive intentions.]&lt;/p&gt;
 </description>
