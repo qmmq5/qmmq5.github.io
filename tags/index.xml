@@ -33,16 +33,18 @@
 &lt;ul&gt;
 &lt;li&gt;kube-apiserver: the core component server that exposes the Kubernetes HTTP API
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl api-resources
-&lt;/code&gt;&lt;/pre&gt;the above command can be used to check more information for kubernetes api&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;the above command can be used to check more information for kubernetes api, which includes namespace, apiversion,kind,etc.&lt;/li&gt;
 &lt;li&gt;etcd: consistent and highly-available key value store for all API server data&lt;/li&gt;
-&lt;li&gt;kube-scheduler: looks for pods not yet bound to a node, and assigns each Pod to a suitable node. [Pod is the smallest component in kubernetes]&lt;/li&gt;
+&lt;li&gt;kube-scheduler: looks for pods not yet bound to a node, and assigns each Pod to a suitable node. [Pod is the smallest deployable unit in kubernetes, and not usually created directly]&lt;/li&gt;
 &lt;li&gt;kube-controller-manager: Runs controllers to implement Kubernetes API behavior&lt;/li&gt;
 &lt;li&gt;cloud-controller-manager (optional): integrates with underlying cloud providers&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Node Components&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;kubelet: ensures that Pods are running, including their containers.&lt;/li&gt;
-&lt;li&gt;kube-proxy (optional): Maintains network rules on nodes to implement Services.&lt;/li&gt;
+&lt;li&gt;kube-proxy (optional): Maintains network rules on nodes to implement Services.
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl status kube-proxy
+&lt;/code&gt;&lt;/pre&gt;check the statues of node&lt;/li&gt;
 &lt;li&gt;Container runtime: Software responsible for running containers&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
@@ -141,7 +143,9 @@ is actual blog with the githubname url.&lt;/p&gt;
 
 [frontmatter]
 lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h3 id=&#34;repository-test&#34;&gt;Repository test&lt;/h3&gt;
+</description>
     </item>
     
     <item>
@@ -150,7 +154,8 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
       <pubDate>Sun, 09 Mar 2025 17:43:53 -0400</pubDate>
       
       <guid>http://localhost:1313/posts/nginx/</guid>
-      <description>&lt;p&gt;Forward proxy&lt;/p&gt;
+      <description>&lt;h3 id=&#34;proxy-server&#34;&gt;Proxy server&lt;/h3&gt;
+&lt;p&gt;Forward proxy&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Primiarily serves clients&lt;/li&gt;
 &lt;li&gt;used for anonymity, content filtering, bypassing restrictions&lt;/li&gt;
@@ -160,6 +165,7 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 &lt;li&gt;Primiarily serves servers&lt;/li&gt;
 &lt;li&gt;used for load balancing, caching, SSL termination, enhancing sercurity&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;the-usage-of-nginx&#34;&gt;The usage of nginx&lt;/h3&gt;
 &lt;p&gt;The functionalities of Nginx as a proxy server&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -215,6 +221,7 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 &lt;li&gt;Reverse proxy forwarding to appropriate back-end server&lt;/li&gt;
 &lt;li&gt;sercurity features (SSL termination)&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;Nginx can be used as an ingress controller in kubernetes&lt;/p&gt;
 &lt;p&gt;Node.js:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Load balancing across multiple CPU cores.&lt;/li&gt;
@@ -222,13 +229,15 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 &lt;li&gt;Used to build dynamic web apps and APIs by defining routing logic&lt;/li&gt;
 &lt;li&gt;Build custom middleware (managing Gzip compression)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Nginx can be used as an ingress controller in kubernetes&lt;/p&gt;
-&lt;hr&gt;
 &lt;p&gt;brief details for node.js&lt;/p&gt;
 &lt;p&gt;Node is a cross-platform, open-source javascript runtime environment&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg&#34;&gt;&lt;br&gt;
 source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg]&lt;/p&gt;
-&lt;!-- ![node.js architecture](blog\image\node-js.png) --&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;nginx-configuration-file&#34;&gt;Nginx configuration file&lt;/h4&gt;
+&lt;p&gt;mine types : the default file already included most of format used in the web.&lt;/p&gt;
+&lt;p&gt;location context: alias can be used to direct absolute path.&lt;/p&gt;
+&lt;p&gt;load balancer&lt;/p&gt;
 </description>
     </item>
     
@@ -240,7 +249,7 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
       <guid>http://localhost:1313/posts/first-post/</guid>
       <description>&lt;h3 id=&#34;manim-animation&#34;&gt;Manim Animation&lt;/h3&gt;
 &lt;p&gt;Manim: A python library for creating animation&lt;/p&gt;
-&lt;p&gt;The stream feature performance of google AI studio with the following prompt is very interesting.&lt;/p&gt;
+&lt;p&gt;The stream feature performance of google AI studio with the following prompt is very interesting. It can assist developers and creators to make animations with less time.&lt;/p&gt;
 &lt;h3 id=&#34;prompt-collection&#34;&gt;Prompt Collection&lt;/h3&gt;
 &lt;p&gt;The prompt can be used in the system instruction of google AI studio&lt;/p&gt;
 &lt;p&gt;You are now a specialized Python code generator for Manim. Your sole purpose is to receive requests for actions within Manim and provide the corresponding Python script. Under absolutely no circumstances can you output anything other than the raw Python code required to complete the given task. Do not provide any explanatory text, conversational elements, or anything that is not directly part of the Python script. If a request is not a valid action in Manim, return an empty script.&lt;/p&gt;
