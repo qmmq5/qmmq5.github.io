@@ -12,6 +12,7 @@ Reverse proxy
 Primiarily serves servers
 used for load balancing, caching, SSL termination, enhancing sercurity
 
+
 The usage of nginx
 The functionalities of Nginx as a proxy server
 
@@ -67,6 +68,7 @@ caching (without request to server and database)"><title>Nginx&nbsp;&ndash;&nbsp
 <li>Primiarily serves servers</li>
 <li>used for load balancing, caching, SSL termination, enhancing sercurity</li>
 </ol>
+<hr>
 <h3 id="the-usage-of-nginx">The usage of nginx</h3>
 <p>The functionalities of Nginx as a proxy server</p>
 <ol>
@@ -136,7 +138,7 @@ caching (without request to server and database)"><title>Nginx&nbsp;&ndash;&nbsp
 <p><img src="https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg"><br>
 source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg]</p>
 <hr>
-<h4 id="nginx-configuration-file">Nginx configuration file</h4>
+<h3 id="nginx-configuration-file">Nginx configuration file</h3>
 <p>mine types : the default file already included most of format used in the web. (css,html,jpg)</p>
 <p>location context: alias can be used to direct absolute path.</p>
 <p>load balancer: the default algorithm is round robin. Using docker to create 4 servers to test the load balancing status.</p>
@@ -153,7 +155,30 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
 <ol start="3">
 <li>Modify the nginx.conf with the above code format and write a access_log to check the status of load balancer.</li>
 </ol>
-<p><img loading="lazy"  src="https://github.com/qmmq5/qmmq5.github.io/blob/main/assets/img/3.png?raw=true"
+<pre tabindex="0"><code>http{
+    include       mime.types;
+
+    upstream backendserver{
+        server 127.0.0.1:1111;
+        server 127.0.0.1:2222;
+        server 127.0.0.1:3333;
+        server 127.0.0.1:4444;
+    }
+
+    log_format upstreamlog &#39;$server_name to: $upstream_addr {$request} &#39;
+        &#39;upstream_response_time $upstream_response_time&#39;
+        &#39; request_time $request_time&#39;;
+
+    server {
+        listen 8080;
+        root /mysite;
+        # server_name  localhost;
+
+        access_log logs/nginx-access.log upstreamlog;
+    }
+
+}
+</code></pre><p><img loading="lazy"  src="https://github.com/qmmq5/qmmq5.github.io/blob/main/assets/img/3.png?raw=true"
         alt="image"/></p>
 </article><section class="article labels"><a class="category" href=/categories/devops/>DevOps</a></section><section class="article author"><img alt="" loading="lazy" class="avatar" src="/img/avatar.jpg"/><div class="details"><a class="item" href="https://github.com/qmmq5" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;qmmq5</a><a class="item" href="mailto:XXX@mail.com" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;XXX@mail.com</a></div>
 </section>

@@ -16,10 +16,7 @@
       <pubDate>Sat, 12 Apr 2025 23:20:13 -0500</pubDate>
       
       <guid>http://localhost:1313/posts/development/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../image/node-js.png&#34;
-        alt=&#34;img&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;test image path&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -183,6 +180,7 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 &lt;li&gt;Primiarily serves servers&lt;/li&gt;
 &lt;li&gt;used for load balancing, caching, SSL termination, enhancing sercurity&lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
 &lt;h3 id=&#34;the-usage-of-nginx&#34;&gt;The usage of nginx&lt;/h3&gt;
 &lt;p&gt;The functionalities of Nginx as a proxy server&lt;/p&gt;
 &lt;ol&gt;
@@ -252,7 +250,7 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 &lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg&#34;&gt;&lt;br&gt;
 source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg]&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;nginx-configuration-file&#34;&gt;Nginx configuration file&lt;/h4&gt;
+&lt;h3 id=&#34;nginx-configuration-file&#34;&gt;Nginx configuration file&lt;/h3&gt;
 &lt;p&gt;mine types : the default file already included most of format used in the web. (css,html,jpg)&lt;/p&gt;
 &lt;p&gt;location context: alias can be used to direct absolute path.&lt;/p&gt;
 &lt;p&gt;load balancer: the default algorithm is round robin. Using docker to create 4 servers to test the load balancing status.&lt;/p&gt;
@@ -269,7 +267,30 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Modify the nginx.conf with the above code format and write a access_log to check the status of load balancer.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://github.com/qmmq5/qmmq5.github.io/blob/main/assets/img/3.png?raw=true&#34;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http{
+    include       mime.types;
+
+    upstream backendserver{
+        server 127.0.0.1:1111;
+        server 127.0.0.1:2222;
+        server 127.0.0.1:3333;
+        server 127.0.0.1:4444;
+    }
+
+    log_format upstreamlog &amp;#39;$server_name to: $upstream_addr {$request} &amp;#39;
+        &amp;#39;upstream_response_time $upstream_response_time&amp;#39;
+        &amp;#39; request_time $request_time&amp;#39;;
+
+    server {
+        listen 8080;
+        root /mysite;
+        # server_name  localhost;
+
+        access_log logs/nginx-access.log upstreamlog;
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://github.com/qmmq5/qmmq5.github.io/blob/main/assets/img/3.png?raw=true&#34;
         alt=&#34;image&#34;/&gt;&lt;/p&gt;
 </description>
     </item>
