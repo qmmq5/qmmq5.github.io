@@ -259,17 +259,17 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
 &lt;ol&gt;
 &lt;li&gt;Using express.js to build a simple backend server, and dockerizing the file to build an image.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/img/1.png&#34;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://github.com/qmmq5/qmmq5.github.io/blob/main/assets/img/1.png?raw=true&#34;
         alt=&#34;image&#34;/&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Mapping the server to 4 different ports through docker&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/assets/img/2.png&#34;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://github.com/qmmq5/qmmq5.github.io/blob/main/assets/img/2.png?raw=true&#34;
         alt=&#34;image&#34;/&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Modify the nginx.conf with the above code format and write a access_log to check the status of load balancer.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/assets/img/3.png&#34;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://github.com/qmmq5/qmmq5.github.io/blob/main/assets/img/3.png?raw=true&#34;
         alt=&#34;image&#34;/&gt;&lt;/p&gt;
 </description>
     </item>
