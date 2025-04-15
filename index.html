@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.146.3"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8"><meta name="generator" content="Hugo 0.146.3"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark"><meta name="description" content=""><title>QQQ&nbsp;&ndash;&nbsp;maxwell and minikube</title><link rel="stylesheet" href="/css/core.min.003a667cf21024ef30f2985fb57c9bd6f6873cf899ee14e9302e68e9f04b681df9440cec4ebdaa101dca533a262c242f.css" integrity="sha384-ADpmfPIQJO8w8phftXyb1vaHPPiZ7hTpMC5o6fBLaB35RAzsTr2qEB3KUzomLCQv"><link rel="alternate" type="application/rss+xml" href="/index.xml" title="QQQ" /><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="QQQ" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">QQQ</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div><div class="site slogan"><span class="title">maxwell and minikube</span></div></section><section id="content"><ul class="note list"><li class="item">
+        
+        <a class="note" href="/posts/development/">
+        
+            <p class="note title">Development</p><p class="note date">Saturday, April 12, 2025</p><p class="note content">
+test image path
+</p></a></li><li class="item">
+        
+        <a class="note" href="/posts/kubernetes/">
+        
+            <p class="note title">Kubernetes</p><p class="note date">Friday, April 4, 2025</p><p class="note content">What is Kubernetes? Kubernetes is an open-source platform that automates the deployment, management, and scaling of containerized applications. It&rsquo;s a common tool to manage the microservices-based applications across various environments for mid and large size companies.
+The core components of Kubernetes: a controle plane and one or more nodes. The following figures from official website introduced the architecture of kubernetes.
+Figure 1. Components of KubernetesThe second figure has more details to show in each node
+<span class="mldr">&mldr;</span></p></a><p class="note labels"><a class="category" href="/categories/devops/">DevOps</a></p></li><li class="item">
+        
+        <a class="note" href="/posts/database/">
+        
+            <p class="note title">database</p><p class="note date">Saturday, March 29, 2025</p><p class="note content">Relational database Sql (structured query language): Mysql, postgresql
+The format of relational database is table
+Non-relational database There are 4 types of non-relational database
+key-value [eg. Redis] column-based [eg. Amazon Redshift, google bigquery, etc] graph-based [eg. Neo4j] document-based [eg. Mongodb] &mdash;&gt; Json format for storing data ACID properties of database systems
+Atomicity &mdash;&gt; All or nothing Consistency &mdash;&gt; No violation of integrity Isolation &mdash;&gt; Concurrent changes invisible =&gt; serializable Durability &mdash;&gt; Committed updates persist CAP theroem for distributed system
+<span class="mldr">&mldr;</span></p></a><p class="note labels"><a class="category" href="/categories/database/">Database</a></p></li><li class="item">
+        
+        <a class="note" href="/posts/github-deployment/">
+        
+            <p class="note title">Hugo usage</p><p class="note date">Sunday, March 9, 2025</p><p class="note content">Hugo deploy on Github Created two repositories, blog and actual blog with the github name (githubname.io). Set the repositories to public, the second one is actual blog with the githubname url. The first repository can be set as private if we need to use it in different platforms.
+clone the blog repo to the local
+create the new hugo site using hugo new site [. (current direcoty)] or [name of folder]
+<span class="mldr">&mldr;</span></p></a></li><li class="item">
+        
+        <a class="note" href="/posts/nginx/">
+        
+            <p class="note title">Nginx</p><p class="note date">Sunday, March 9, 2025</p><p class="note content">Proxy server Forward proxy
+Primiarily serves clients used for anonymity, content filtering, bypassing restrictions Reverse proxy
+Primiarily serves servers used for load balancing, caching, SSL termination, enhancing sercurity The usage of nginx The functionalities of Nginx as a proxy server
+load balancing
+static dynamic round robin least connection method weighted round-robin least response time method source ip hash http {upstream [] {server ...server ...server ...}server {...}} caching (without request to server and database)
+<span class="mldr">&mldr;</span></p></a><p class="note labels"><a class="category" href="/categories/devops/">DevOps</a></p></li><li class="item">
         
         <a class="note" href="/posts/first-post/">
         

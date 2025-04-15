@@ -1,22 +1,286 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>QQQ</title>
-    <link>https://qmmq5.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on QQQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>©2025 Notepadium.</copyright>
     <lastBuildDate>Sat, 12 Apr 2025 23:20:13 -0500</lastBuildDate>
     
-        <atom:link href="https://qmmq5.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Development</title>
+      <link>http://localhost:1313/posts/development/</link>
+      <pubDate>Sat, 12 Apr 2025 23:20:13 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/development/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../image/node-js.png&#34;
+        alt=&#34;img&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;test image path&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>http://localhost:1313/posts/kubernetes/</link>
+      <pubDate>Fri, 04 Apr 2025 00:29:08 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/kubernetes/</guid>
+      <description>&lt;h3 id=&#34;what-is-kubernetes&#34;&gt;What is Kubernetes?&lt;/h3&gt;
+&lt;p&gt;Kubernetes is an open-source platform that automates the deployment, management, and scaling of containerized applications. It&amp;rsquo;s a common tool to manage the microservices-based applications across various environments for mid and large size companies.&lt;/p&gt;
+&lt;p&gt;The core components of Kubernetes: a controle plane and one or more nodes. The following figures from official website introduced the architecture of kubernetes.&lt;/p&gt;
+&lt;div style=&#34;text-align:center&#34;&gt;
+&lt;img src=&#34;https://kubernetes.io/images/docs/components-of-kubernetes.svg&#34;&gt;
+&lt;em &gt;Figure 1. Components of Kubernetes&lt;/em&gt;
+&lt;/div&gt;
+&lt;p&gt;The second figure has more details to show in each node&lt;/p&gt;
+&lt;div style = &#34;text-align:center&#34;&gt;
+&lt;img src=&#34;https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg&#34;&gt;
+&lt;em &gt;Figure 2. Cluster Architecture&lt;/em&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;brief-details-of-each-components&#34;&gt;Brief details of each components&lt;/h4&gt;
+&lt;p&gt;Control Plane Components&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kube-apiserver: the core component server that exposes the Kubernetes HTTP API
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl api-resources
+&lt;/code&gt;&lt;/pre&gt;the above command can be used to check more information for kubernetes api, which includes namespace, apiversion,kind,etc.&lt;/li&gt;
+&lt;li&gt;etcd: consistent and highly-available key value store for all API server data&lt;/li&gt;
+&lt;li&gt;kube-scheduler: looks for pods not yet bound to a node, and assigns each Pod to a suitable node. [Pod is the smallest deployable unit in kubernetes, and not usually created directly]&lt;/li&gt;
+&lt;li&gt;kube-controller-manager: Runs controllers to implement Kubernetes API behavior&lt;/li&gt;
+&lt;li&gt;cloud-controller-manager (optional): integrates with underlying cloud providers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Node Components&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kubelet: ensures that Pods are running, including their containers.&lt;/li&gt;
+&lt;li&gt;kube-proxy (optional): Maintains network rules on nodes to implement Services.
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl status kube-proxy
+&lt;/code&gt;&lt;/pre&gt;check the statues of node&lt;/li&gt;
+&lt;li&gt;Container runtime: Software responsible for running containers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>http://localhost:1313/posts/database/</link>
+      <pubDate>Sat, 29 Mar 2025 23:44:01 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/database/</guid>
+      <description>&lt;h4 id=&#34;relational-database&#34;&gt;Relational database&lt;/h4&gt;
+&lt;p&gt;Sql (structured query language): Mysql, postgresql&lt;/p&gt;
+&lt;p&gt;The format of relational database is table&lt;/p&gt;
+&lt;h4 id=&#34;non-relational-database&#34;&gt;Non-relational database&lt;/h4&gt;
+&lt;p&gt;There are 4 types of non-relational database&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;key-value [eg. Redis]&lt;/li&gt;
+&lt;li&gt;column-based [eg. Amazon Redshift, google bigquery, etc]&lt;/li&gt;
+&lt;li&gt;graph-based [eg. Neo4j]&lt;/li&gt;
+&lt;li&gt;document-based [eg. Mongodb] &amp;mdash;&amp;gt; Json format for storing data&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;ACID properties of database systems&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Atomicity &amp;mdash;&amp;gt; All or nothing&lt;/li&gt;
+&lt;li&gt;Consistency &amp;mdash;&amp;gt; No violation of integrity&lt;/li&gt;
+&lt;li&gt;Isolation &amp;mdash;&amp;gt; Concurrent changes invisible =&amp;gt; serializable&lt;/li&gt;
+&lt;li&gt;Durability &amp;mdash;&amp;gt; Committed updates persist&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;CAP theroem for distributed system&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Consistency &amp;mdash;&amp;gt; All data on the cluster has same copies.&lt;/li&gt;
+&lt;li&gt;Availability &amp;mdash;&amp;gt; Cluster always accepts reads and writes&lt;/li&gt;
+&lt;li&gt;Partition tolerance &amp;mdash;&amp;gt; Guaranteed properties are maintained even when network
+failures prevent some machines from communicating with others.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo usage</title>
+      <link>http://localhost:1313/posts/github-deployment/</link>
+      <pubDate>Sun, 09 Mar 2025 23:22:54 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/github-deployment/</guid>
+      <description>&lt;h3 id=&#34;hugo-deploy-on-github&#34;&gt;Hugo deploy on Github&lt;/h3&gt;
+&lt;p&gt;Created two repositories, blog and actual blog with the github name (githubname.io). Set the repositories to public, the second one is actual blog with the githubname url. The first repository can be set as private if we need to use it in different platforms.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;clone the blog repo to the local&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;create the new hugo site using hugo new site [. (current direcoty)] or [name of folder]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cd themes and clone specific theme from github, and config toml file to set theme&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;hugo server or hugo server -D to test local blog server&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;using hugo new posts/post_name.md to add content&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set the production repo with main branch, add the a readme file to this repo.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git checkout -b main&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;touch README.md&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;add submodule to public folder&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; git submodule add -b main [https production repo url] public&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;build content with the theme before deploy&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hugo -t [theme name]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cd public folder and push all content to github&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git commit -m &amp;quot;init&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git push origin main&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;github wil automatically deploy the site from the main branch, the production repository is the whole content in the public folder.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test the new feature of youtube video &lt;em&gt;Ask about this video&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;refer to &lt;a href=&#34;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;amp;t=83s&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://www.youtube.com/watch?v=LIFvgrRxdt4&amp;t=83s&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;configure-the-toml-file&#34;&gt;Configure the toml file&lt;/h3&gt;
+&lt;p&gt;Added the last edited date behind the date created of each post&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;enableGitInfo = true
+
+[frontmatter]
+lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h3 id=&#34;repository-test&#34;&gt;Repository test&lt;/h3&gt;
+&lt;p&gt;The method for moving all folders in the first repository to new platform.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git pull the first blog repository&lt;/li&gt;
+&lt;li&gt;check the remote repository in public folder&lt;/li&gt;
+&lt;li&gt;if the remote repository is not production reposition, then remove the folder, and add submodule through the production reposition url again.&lt;/li&gt;
+&lt;li&gt;also check the theme folder if it is empty, and clone it from github as needed.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://localhost:1313/posts/nginx/</link>
+      <pubDate>Sun, 09 Mar 2025 17:43:53 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/nginx/</guid>
+      <description>&lt;h3 id=&#34;proxy-server&#34;&gt;Proxy server&lt;/h3&gt;
+&lt;p&gt;Forward proxy&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Primiarily serves clients&lt;/li&gt;
+&lt;li&gt;used for anonymity, content filtering, bypassing restrictions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Reverse proxy&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Primiarily serves servers&lt;/li&gt;
+&lt;li&gt;used for load balancing, caching, SSL termination, enhancing sercurity&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;the-usage-of-nginx&#34;&gt;The usage of nginx&lt;/h3&gt;
+&lt;p&gt;The functionalities of Nginx as a proxy server&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;load balancing&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;static&lt;/th&gt;
+          &lt;th&gt;dynamic&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;round robin&lt;/td&gt;
+          &lt;td&gt;least connection method&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;weighted round-robin&lt;/td&gt;
+          &lt;td&gt;least response time method&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;source ip hash&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http {
+   upstream [] {
+       server ...
+       server ...
+       server ...
+   }
+
+    server {
+        ...
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;caching (without request to server and database)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;security&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;compression and segmentation&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nginx:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Load balancing across multiple servers&lt;/li&gt;
+&lt;li&gt;High performance web server (ideal for serving static content)&lt;/li&gt;
+&lt;li&gt;Reverse proxy forwarding to appropriate back-end server&lt;/li&gt;
+&lt;li&gt;sercurity features (SSL termination)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nginx can be used as an ingress controller in kubernetes&lt;/p&gt;
+&lt;p&gt;Node.js:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Load balancing across multiple CPU cores.&lt;/li&gt;
+&lt;li&gt;Express.js is a server framework for Node.js&lt;/li&gt;
+&lt;li&gt;Used to build dynamic web apps and APIs by defining routing logic&lt;/li&gt;
+&lt;li&gt;Build custom middleware (managing Gzip compression)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;brief details for node.js&lt;/p&gt;
+&lt;p&gt;Node is a cross-platform, open-source javascript runtime environment&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg&#34;&gt;&lt;br&gt;
+source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg]&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;nginx-configuration-file&#34;&gt;Nginx configuration file&lt;/h4&gt;
+&lt;p&gt;mine types : the default file already included most of format used in the web. (css,html,jpg)&lt;/p&gt;
+&lt;p&gt;location context: alias can be used to direct absolute path.&lt;/p&gt;
+&lt;p&gt;load balancer: the default algorithm is round robin. Using docker to create 4 servers to test the load balancing status.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Using express.js to build a simple backend server, and dockerizing the file to build an image.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/img/1.png&#34;
+        alt=&#34;image&#34;/&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Mapping the server to 4 different ports through docker&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/assets/img/2.png&#34;
+        alt=&#34;image&#34;/&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Modify the nginx.conf with the above code format and write a access_log to check the status of load balancer.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/assets/img/3.png&#34;
+        alt=&#34;image&#34;/&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Observation</title>
-      <link>https://qmmq5.github.io/posts/first-post/</link>
+      <link>http://localhost:1313/posts/first-post/</link>
       <pubDate>Sat, 22 Feb 2025 17:53:55 -0500</pubDate>
       
-      <guid>https://qmmq5.github.io/posts/first-post/</guid>
+      <guid>http://localhost:1313/posts/first-post/</guid>
       <description>&lt;h3 id=&#34;manim-animation&#34;&gt;Manim Animation&lt;/h3&gt;
 &lt;p&gt;Manim: A python library for creating animation&lt;/p&gt;
 &lt;p&gt;The stream feature performance of google AI studio with the following prompt is very interesting. It can assist developers and creators to make animations with less time.&lt;/p&gt;
@@ -29,10 +293,10 @@
     
     <item>
       <title>About</title>
-      <link>https://qmmq5.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://qmmq5.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I build the view from my eye. ✨&lt;/p&gt;
 &lt;p&gt;trip diary &amp;ndash; natural view&lt;/p&gt;
 &lt;!-- 
