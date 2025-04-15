@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Development</title>
+      <link>http://localhost:1313/posts/development/</link>
+      <pubDate>Sat, 12 Apr 2025 23:20:13 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/development/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../image/node-js.png&#34;
+        alt=&#34;img&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;test image path&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Kubernetes</title>
       <link>http://localhost:1313/posts/kubernetes/</link>
       <pubDate>Fri, 04 Apr 2025 00:29:08 -0500</pubDate>
@@ -94,8 +106,7 @@ failures prevent some machines from communicating with others.&lt;/li&gt;
       
       <guid>http://localhost:1313/posts/github-deployment/</guid>
       <description>&lt;h3 id=&#34;hugo-deploy-on-github&#34;&gt;Hugo deploy on Github&lt;/h3&gt;
-&lt;p&gt;Created two repositories, blog and actual blog with the github name (githubname.io). Set the repositories to public, the second one
-is actual blog with the githubname url.&lt;/p&gt;
+&lt;p&gt;Created two repositories, blog and actual blog with the github name (githubname.io). Set the repositories to public, the second one is actual blog with the githubname url. The first repository can be set as private if we need to use it in different platforms.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;clone the blog repo to the local&lt;/p&gt;
@@ -130,7 +141,7 @@ is actual blog with the githubname url.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git commit -m &amp;quot;init&amp;quot;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git push origin main&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;github wil automatically deploy the site from the main branch&lt;/p&gt;
+&lt;p&gt;github wil automatically deploy the site from the main branch, the production repository is the whole content in the public folder.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Test the new feature of youtube video &lt;em&gt;Ask about this video&lt;/em&gt;&lt;/p&gt;
@@ -146,6 +157,13 @@ is actual blog with the githubname url.&lt;/p&gt;
 lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
 &lt;h3 id=&#34;repository-test&#34;&gt;Repository test&lt;/h3&gt;
+&lt;p&gt;The method for moving all folders in the first repository to new platform.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git pull the first blog repository&lt;/li&gt;
+&lt;li&gt;check the remote repository in public folder&lt;/li&gt;
+&lt;li&gt;if the remote repository is not production reposition, then remove the folder, and add submodule through the production reposition url again.&lt;/li&gt;
+&lt;li&gt;also check the theme folder if it is empty, and clone it from github as needed.&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -236,9 +254,24 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg]&lt;/p&gt;
 &lt;hr&gt;
 &lt;h4 id=&#34;nginx-configuration-file&#34;&gt;Nginx configuration file&lt;/h4&gt;
-&lt;p&gt;mine types : the default file already included most of format used in the web.&lt;/p&gt;
+&lt;p&gt;mine types : the default file already included most of format used in the web. (css,html,jpg)&lt;/p&gt;
 &lt;p&gt;location context: alias can be used to direct absolute path.&lt;/p&gt;
-&lt;p&gt;load balancer&lt;/p&gt;
+&lt;p&gt;load balancer: the default algorithm is round robin. Using docker to create 4 servers to test the load balancing status.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Using express.js to build a simple backend server, and dockerizing the file to build an image.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/img/1.png&#34;
+        alt=&#34;image&#34;/&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Mapping the server to 4 different ports through docker&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/assets/img/2.png&#34;
+        alt=&#34;image&#34;/&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Modify the nginx.conf with the above code format and write a access_log to check the status of load balancer.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;../../public/assets/img/3.png&#34;
+        alt=&#34;image&#34;/&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -265,7 +298,7 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
       
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I build the view from my eye. ✨&lt;/p&gt;
-&lt;p&gt;travel diary&lt;/p&gt;
+&lt;p&gt;trip diary &amp;ndash; natural view&lt;/p&gt;
 &lt;!-- 
 &lt;video width=&#34;320&#34; height=&#34;240&#34; controls&gt;
   &lt;source src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/view?usp=drive_link.mov&#34; type=&#34;video/mp4&#34;&gt;
