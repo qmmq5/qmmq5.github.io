@@ -12,12 +12,19 @@
     
     
     <item>
-      <title>Development</title>
+      <title>Project Methodology</title>
       <link>http://localhost:1313/posts/development/</link>
       <pubDate>Sat, 12 Apr 2025 23:20:13 -0500</pubDate>
       
       <guid>http://localhost:1313/posts/development/</guid>
-      <description></description>
+      <description>&lt;h3 id=&#34;agile&#34;&gt;Agile&lt;/h3&gt;
+&lt;h3 id=&#34;scrum&#34;&gt;Scrum&lt;/h3&gt;
+&lt;p&gt;temporary test image path&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2023-09/scrum-framework-9.29.23.png&#34;
+        alt=&#34;image&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;http://localhost:1313/blog/static/img/scrum.png&#34;
+        alt=&#34;img test&#34;/&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -319,7 +326,7 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
       
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I build the view from my eye. ✨&lt;/p&gt;
-&lt;p&gt;trip diary &amp;ndash; natural view&lt;/p&gt;
+&lt;p&gt;diary &amp;ndash; natural view&lt;/p&gt;
 &lt;!-- 
 &lt;video width=&#34;320&#34; height=&#34;240&#34; controls&gt;
   &lt;source src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/view?usp=drive_link.mov&#34; type=&#34;video/mp4&#34;&gt;
