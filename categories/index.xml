@@ -12,22 +12,6 @@
     
     
     <item>
-      <title>Project Methodology</title>
-      <link>http://localhost:1313/posts/development/</link>
-      <pubDate>Sat, 12 Apr 2025 23:20:13 -0500</pubDate>
-      
-      <guid>http://localhost:1313/posts/development/</guid>
-      <description>&lt;h3 id=&#34;agile&#34;&gt;Agile&lt;/h3&gt;
-&lt;h3 id=&#34;scrum&#34;&gt;Scrum&lt;/h3&gt;
-&lt;p&gt;temporary test image path&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2023-09/scrum-framework-9.29.23.png&#34;
-        alt=&#34;image&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;http://localhost:1313/blog/static/img/scrum.png&#34;
-        alt=&#34;img test&#34;/&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Kubernetes</title>
       <link>http://localhost:1313/posts/kubernetes/</link>
       <pubDate>Fri, 04 Apr 2025 00:29:08 -0500</pubDate>
@@ -168,6 +152,13 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 &lt;li&gt;if the remote repository is not production reposition, then remove the folder, and add submodule through the production reposition url again.&lt;/li&gt;
 &lt;li&gt;also check the theme folder if it is empty, and clone it from github as needed.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;image-rendering&#34;&gt;Image rendering&lt;/h3&gt;
+&lt;p&gt;Image rendering issue solved by created a static folder under the root directory,then put all images to a img folder in static folder and according to the base url in toml file, &lt;a href=&#34;https://xxx.xxx.com&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://xxx.xxx.com&lt;/a&gt;, the markdown syntax would be written as&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![text](/../img/imagename.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;if the base url is &lt;a href=&#34;https://xxx.xxx.com/xxx.xxx.xxx&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://xxx.xxx.com/xxx.xxx.xxx&lt;/a&gt;. try&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![text](/../../imgimagename.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;the local markdown preview in vscode doesn&amp;rsquo;t work for this syntax, and it can be used to assist viewing the content when browser isn&amp;rsquo;t rendering the images. Based on the above solution,  the browser works well.&lt;/p&gt;
 </description>
     </item>
     
