@@ -11,6 +11,79 @@
     
     
     <item>
+      <title>Software Development</title>
+      <link>http://localhost:1313/posts/software_development/</link>
+      <pubDate>Thu, 17 Apr 2025 16:45:35 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/software_development/</guid>
+      <description>        
+ &lt;div class=&#34;custom-toc&#34;&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#7-phases-in-software-development-life-cycle&#34;&gt;7 Phases in Software Development Life Cycle&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#waterfall&#34;&gt;Waterfall&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#agile&#34;&gt;Agile&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#scrum&#34;&gt;Scrum&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#kanban&#34;&gt;Kanban&lt;/a&gt;
+              &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&#34;#test-driven-development-tdd&#34;&gt;Test-Driven Development (TDD)&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+ &lt;/div&gt;
+&lt;h3 id=&#34;7-phases-in-software-development-life-cycle&#34;&gt;7 Phases in Software Development Life Cycle&lt;/h3&gt;
+&lt;p&gt;Software development life cycle is a structured process to develop good quality software with different phases.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Planning&lt;/li&gt;
+&lt;li&gt;Requirements Analysis&lt;/li&gt;
+&lt;li&gt;Design&lt;/li&gt;
+&lt;li&gt;Implementation&lt;/li&gt;
+&lt;li&gt;Testing&lt;/li&gt;
+&lt;li&gt;Deployment&lt;/li&gt;
+&lt;li&gt;Maintenance&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://datarob.com/content/images/2019/08/SDLC-stages.png&#34;
+        alt=&#34;sdlc&#34;/&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;waterfall&#34;&gt;Waterfall&lt;/h3&gt;
+&lt;p&gt;The traditional linear, sequential approach. The next phase begins until the last phase is completed. This approach is usually less adaptable to change for projects&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://cdn.prod.website-files.com/62fcfcf2e1a4c21ed18b80e6/6491a872e80308db4e9759b4_waterfall_methodology_example_49kw.png&#34;
+        alt=&#34;waterfall methodology&#34;/&gt;&lt;/p&gt;
+&lt;h3 id=&#34;agile&#34;&gt;Agile&lt;/h3&gt;
+&lt;p&gt;The common used model in modern software development life cycle. It mainly emphasizes flexibility, collaboration, and adaptability in responding to change. Compared to waterfall approach, it doesn&amp;rsquo;t need to wait for the last phase completed to start the next phase. Several methodologies such as Scrum, Kanban, and Extreme Programming.&lt;/p&gt;
+&lt;h4 id=&#34;scrum&#34;&gt;Scrum&lt;/h4&gt;
+&lt;p&gt;Scrum is a structured agile approach&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2023-09/scrum-framework-9.29.23.png&#34;
+        alt=&#34;scrum&#34;/&gt;&lt;/p&gt;
+&lt;h4 id=&#34;kanban&#34;&gt;Kanban&lt;/h4&gt;
+&lt;p&gt;Kanban is a virtualizing approach with continuous workflow structure&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://landing.moqups.com/img/templates/business-strategy/kanban-board.png&#34;
+        alt=&#34;kanban&#34;/&gt;&lt;/p&gt;
+&lt;h5 id=&#34;test-driven-development-tdd&#34;&gt;Test-Driven Development (TDD)&lt;/h5&gt;
+&lt;p&gt;TDD is a software development technique focused on writing tests before writing code. It can be used in any software development methodology.&lt;/p&gt;
+&lt;p&gt;The three processes of TDD:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Red Phase: write a minimal test on the behavior needed.&lt;/li&gt;
+&lt;li&gt;Green Phase: write only enough code to make the failing test pass.&lt;/li&gt;
+&lt;li&gt;Refactor Phase: improve code while keeping tests green.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;reference:&lt;/p&gt;
+&lt;p&gt;figures: [1]https://datarob.com/content/images/2019/08/SDLC-stages.png
+[2]https://cdn.prod.website-files.com/62fcfcf2e1a4c21ed18b80e6/6491a872e80308db4e9759b4_waterfall_methodology_example_49kw.png
+[3]https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2023-09/scrum-framework-9.29.23.png
+[4]https://landing.moqups.com/img/templates/business-strategy/kanban-board.png&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Kubernetes</title>
       <link>http://localhost:1313/posts/kubernetes/</link>
       <pubDate>Fri, 04 Apr 2025 00:29:08 -0500</pubDate>
@@ -153,9 +226,9 @@ lastmod = [&amp;#39;:git&amp;#39;, &amp;#39;:fileModTime&amp;#39;]
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;image-rendering&#34;&gt;Image rendering&lt;/h3&gt;
-&lt;p&gt;Image rendering issue solved by created a static folder under the root directory,then put all images to a img folder in static folder and according to the base url in toml file, &lt;a href=&#34;https://xxx.xxx.com&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://xxx.xxx.com&lt;/a&gt;, the markdown syntax would be written as&lt;/p&gt;
+&lt;p&gt;Image rendering issue solved by created a static folder under the root directory,then put all images to a img folder in static folder and check the base url in toml file, it the baseURL is &lt;a href=&#34;https://xxx.xxx.com&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://xxx.xxx.com&lt;/a&gt;, the markdown syntax would be written as&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![text](/../img/imagename.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;if the base url is &lt;a href=&#34;https://xxx.xxx.com/xxx.xxx.xxx&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://xxx.xxx.com/xxx.xxx.xxx&lt;/a&gt;. try&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;if the baseURL is &lt;a href=&#34;https://xxx.xxx.com/xxx.xxx.xxx&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://xxx.xxx.com/xxx.xxx.xxx&lt;/a&gt;. try&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![text](/../../imgimagename.png)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;the local markdown preview in vscode doesn&amp;rsquo;t work for this syntax, and it can be used to assist viewing the content when browser isn&amp;rsquo;t rendering the images. Based on the above solution,  the browser works well.&lt;/p&gt;
 </description>
@@ -253,7 +326,7 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
 &lt;p&gt;location context: alias can be used to direct absolute path.&lt;/p&gt;
 &lt;p&gt;load balancer: the default algorithm is round robin. Using docker to create 4 servers to test the load balancing status.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Using express.js to build a simple backend server, and dockerizing the file to build an image.&lt;/li&gt;
+&lt;li&gt;Using express.js to build a simple backend server to show some message on browser, and dockerizing the file to build an image.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;https://github.com/qmmq5/qmmq5.github.io/blob/main/assets/img/1.png?raw=true&#34;
         alt=&#34;image&#34;/&gt;&lt;/p&gt;
