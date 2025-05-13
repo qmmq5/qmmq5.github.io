@@ -12,7 +12,7 @@ The second figure has more details to show in each node"><title>Kubernetes&nbsp;
 <meta name="twitter:title" content="Kubernetes" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">QQQ</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div><div class="site slogan"><span class="title">maxwell and minikube</span></div></section><section id="content"><div class="article-container"><section class="article header">
-    <h1 class="article title">Kubernetes</h1><p class="article date">Friday, April 4, 2025<span class="lastmod"> • edited Saturday, April 12, 2025</span></p></section><article class="article markdown-body"><h3 id="what-is-kubernetes">What is Kubernetes?</h3>
+    <h1 class="article title">Kubernetes</h1><p class="article date">Friday, April 4, 2025<span class="lastmod"> • edited Sunday, May 11, 2025</span></p></section><article class="article markdown-body"><h3 id="what-is-kubernetes">What is Kubernetes?</h3>
 <p>Kubernetes is an open-source platform that automates the deployment, management, and scaling of containerized applications. It&rsquo;s a common tool to manage the microservices-based applications across various environments for mid and large size companies.</p>
 <p>The core components of Kubernetes: a controle plane and one or more nodes. The following figures from official website introduced the architecture of kubernetes.</p>
 <div style="text-align:center">
@@ -28,8 +28,8 @@ The second figure has more details to show in each node"><title>Kubernetes&nbsp;
 <p>Control Plane Components</p>
 <ul>
 <li>kube-apiserver: the core component server that exposes the Kubernetes HTTP API
-<pre tabindex="0"><code>kubectl api-resources
-</code></pre>the above command can be used to check more information for kubernetes api, which includes namespace, apiversion,kind,etc.</li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl api-resources
+</span></span></code></pre></div>the above command can be used to check more information for kubernetes api, which includes namespace, apiversion,kind,etc.</li>
 <li>etcd: consistent and highly-available key value store for all API server data</li>
 <li>kube-scheduler: looks for pods not yet bound to a node, and assigns each Pod to a suitable node. [Pod is the smallest deployable unit in kubernetes, and not usually created directly]</li>
 <li>kube-controller-manager: Runs controllers to implement Kubernetes API behavior</li>
@@ -44,6 +44,54 @@ The second figure has more details to show in each node"><title>Kubernetes&nbsp;
 <li>Container runtime: Software responsible for running containers</li>
 </ul>
 <hr>
+<h3 id="some-usage-of-minikube">Some usage of minikube</h3>
+<p>Minikube is a local tool that can apply the kubernetes development on the personal computer.</p>
+<p>Using docker as driver to start minikube is more convenient.[Only windows Pro has hyper-V features in control panel]</p>
+<pre tabindex="0"><code>minikube start --driver=docker # start minikube
+
+alias k = &#39;kubectl&#39; # abbreviation
+
+k config view # configuration for kubectl
+
+kubectl cluster-info # cluster running information
+
+kubectl get nodes # node info, it will show minikube 
+
+kubectl describe node minikube # node info of minikube, it will include allocated resources, events, etc.
+</code></pre><pre tabindex="0"><code>
+## namespace
+
+kubectl get namespace 
+
+kubectl create/delete namespace &lt;name&gt;
+
+(eg. kubectl create/delete namespace prod/dev/test)
+
+kubectl describe namespace &lt;name&gt;
+</code></pre><p>Namespace can be write as -n prod/dev or other customized namespace in get or deployment command.</p>
+<pre tabindex="0"><code>kubectl get pods -n dev
+
+kubectl get pos --all-namespace
+
+kubectl create deyployment &lt;name&gt; --image=kicbase/echo-server:1.0  # default namespace, or add -n dev to development
+
+kubectl delete deployment &lt;name&gt; 
+
+kubectl get events -n dev # check the events of application on the specific namespace
+</code></pre><p>Deployment tests</p>
+<pre tabindex="0"><code>kubectl apply -f &lt;name.yaml&gt;
+
+kubectl get deployments.apps
+
+kubectl get replicaset
+
+kubectl get pods 
+</code></pre><p>The data changed in the ConfigMap need different name in metadata when updating the deployments.</p>
+<hr>
+<h3 id="helm">Helm</h3>
+<p>Helm is a package manager of kubernetes, as npm in node.js. The helm chart contains chart metadata and template. The template is kubernetes resources include the config, service and deployment. The values.yaml is the interface of kubernetes cluster.</p>
+<p><img loading="lazy"  src="/../img/helm.png"
+        alt="helm"/></p>
 </article><section class="article labels"><a class="category" href=/categories/devops/>DevOps</a></section><section class="article author"><img alt="" loading="lazy" class="avatar" src="/img/avatar.jpg"/><div class="details"><a class="item" href="https://github.com/qmmq5" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;qmmq5</a><a class="item" href="mailto:XXX@mail.com" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;XXX@mail.com</a></div>
 </section>
 </div>

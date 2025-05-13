@@ -109,8 +109,8 @@
 &lt;p&gt;Control Plane Components&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;kube-apiserver: the core component server that exposes the Kubernetes HTTP API
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl api-resources
-&lt;/code&gt;&lt;/pre&gt;the above command can be used to check more information for kubernetes api, which includes namespace, apiversion,kind,etc.&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl api-resources
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;the above command can be used to check more information for kubernetes api, which includes namespace, apiversion,kind,etc.&lt;/li&gt;
 &lt;li&gt;etcd: consistent and highly-available key value store for all API server data&lt;/li&gt;
 &lt;li&gt;kube-scheduler: looks for pods not yet bound to a node, and assigns each Pod to a suitable node. [Pod is the smallest deployable unit in kubernetes, and not usually created directly]&lt;/li&gt;
 &lt;li&gt;kube-controller-manager: Runs controllers to implement Kubernetes API behavior&lt;/li&gt;
@@ -125,6 +125,54 @@
 &lt;li&gt;Container runtime: Software responsible for running containers&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
+&lt;h3 id=&#34;some-usage-of-minikube&#34;&gt;Some usage of minikube&lt;/h3&gt;
+&lt;p&gt;Minikube is a local tool that can apply the kubernetes development on the personal computer.&lt;/p&gt;
+&lt;p&gt;Using docker as driver to start minikube is more convenient.[Only windows Pro has hyper-V features in control panel]&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;minikube start --driver=docker # start minikube
+
+alias k = &amp;#39;kubectl&amp;#39; # abbreviation
+
+k config view # configuration for kubectl
+
+kubectl cluster-info # cluster running information
+
+kubectl get nodes # node info, it will show minikube 
+
+kubectl describe node minikube # node info of minikube, it will include allocated resources, events, etc.
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+## namespace
+
+kubectl get namespace 
+
+kubectl create/delete namespace &amp;lt;name&amp;gt;
+
+(eg. kubectl create/delete namespace prod/dev/test)
+
+kubectl describe namespace &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Namespace can be write as -n prod/dev or other customized namespace in get or deployment command.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get pods -n dev
+
+kubectl get pos --all-namespace
+
+kubectl create deyployment &amp;lt;name&amp;gt; --image=kicbase/echo-server:1.0  # default namespace, or add -n dev to development
+
+kubectl delete deployment &amp;lt;name&amp;gt; 
+
+kubectl get events -n dev # check the events of application on the specific namespace
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Deployment tests&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl apply -f &amp;lt;name.yaml&amp;gt;
+
+kubectl get deployments.apps
+
+kubectl get replicaset
+
+kubectl get pods 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The data changed in the ConfigMap need different name in metadata when updating the deployments.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;helm&#34;&gt;Helm&lt;/h3&gt;
+&lt;p&gt;Helm is a package manager of kubernetes, as npm in node.js. The helm chart contains chart metadata and template. The template is kubernetes resources include the config, service and deployment. The values.yaml is the interface of kubernetes cluster.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34;  src=&#34;http://localhost:1313/../img/helm.png&#34;
+        alt=&#34;helm&#34;/&gt;&lt;/p&gt;
 </description>
     </item>
     
