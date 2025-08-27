@@ -4,7 +4,584 @@
 <meta name="supported-color-schemes" content="light dark"><meta name="description" content=""><title>Tags&nbsp;&ndash;&nbsp;QQQ</title><link rel="stylesheet" href="/css/core.min.003a667cf21024ef30f2985fb57c9bd6f6873cf899ee14e9302e68e9f04b681df9440cec4ebdaa101dca533a262c242f.css" integrity="sha384-ADpmfPIQJO8w8phftXyb1vaHPPiZ7hTpMC5o6fBLaB35RAzsTr2qEB3KUzomLCQv"><link rel="alternate" type="application/rss+xml" href="/tags/index.xml" title="QQQ" /><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Tags" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">QQQ</span></a></span>
-        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div><div class="site slogan"><span class="title">maxwell and minikube</span></div></section><section id="content"><section class="article header"><h1>Tags</h1></section></section><section id="footer"><div class="footer-wrap">
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div><div class="site slogan"><span class="title">maxwell and minikube</span></div></section><section id="content"><section class="article header"><h1>Tags</h1></section><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Music Player</title>
+    <style>
+         
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 220px;
+            background: linear-gradient(135deg, #deeffe 20%);
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #2c3e50;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .music-player:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-player.minimized {
+            width: 50px;
+            height: 50px;
+            padding: 8px;
+            overflow: hidden;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            cursor: move;
+            padding: 3px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .player-header:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .drag-handle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .drag-icon {
+            font-size: 12px;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .player-header:hover .drag-icon {
+            opacity: 1;
+        }
+
+        .player-title {
+            font-size: 10px;
+            font-weight: 600;
+            opacity: 0.7;
+        }
+
+        .minimize-btn {
+            background: none;
+            border: none;
+            color: #2c3e50;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .minimize-btn:hover {
+            opacity: 1;
+        }
+
+        .song-info {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .song-title {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .song-artist {
+            font-size: 10px;
+            opacity: 0.6;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .progress-container {
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            margin-top: 3px;
+            opacity: 0.6;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: #2c3e50;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 6px;
+            border-radius: 50%;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+            transform: scale(1.1);
+        }
+
+        .play-btn {
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .volume-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .volume-slider {
+            flex: 1;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 1px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2c3e50;
+            cursor: pointer;
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2c3e50;
+            cursor: pointer;
+            border: none;
+        }
+
+        .volume-icon {
+            font-size: 10px;
+            opacity: 0.6;
+        }
+
+         
+        .minimized .player-content {
+            display: none;
+        }
+
+        .minimized .minimize-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+       
+
+        .demo-content h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .demo-content p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    
+    <div class="music-player" id="musicPlayer">
+        <div class="player-header" id="dragHandle">
+            <div class="drag-handle">
+                <span class="drag-icon">⋮⋮</span>
+                <span class="player-title">NOW PLAYING</span>
+            </div>
+            <button class="minimize-btn" onclick="toggleMinimize()" id="minimizeBtn">−</button>
+        </div>
+        
+        <div class="player-content" id="playerContent">
+            <div class="song-info">
+                <div class="song-title" id="songTitle">Awesome Track</div>
+                <div class="song-artist" id="songArtist">Great Artist</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" onclick="seekTo(event)">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">3:24</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn" onclick="previousTrack()">⏮</button>
+                <button class="control-btn play-btn" onclick="togglePlay()" id="playBtn">▶</button>
+                <button class="control-btn" onclick="nextTrack()">⏭</button>
+            </div>
+
+            <div class="volume-container">
+                <span class="volume-icon">🔊</span>
+                <input type="range" class="volume-slider" min="0" max="100" value="70" onchange="setVolume(this.value)">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isPlaying = false;
+        let isMinimized = false;
+        let currentTime = 0;
+        let totalTime = 204; 
+        let volume = 70;
+        let progressInterval;
+        let audio = null;
+
+        
+        let isDragging = false;
+        let dragOffset = { x: 0, y: 0 };
+
+        
+        const playlist = [
+            { 
+                title: "Piano", 
+                artist: "Audio Sample", 
+                url: "/../audio/audio1.mp3",
+                duration: 5
+            },
+        ];
+        let currentTrack = 0;
+
+        function togglePlay() {
+            if (!audio) {
+                loadCurrentTrack();
+                return;
+            }
+
+            isPlaying = !isPlaying;
+            const playBtn = document.getElementById('playBtn');
+            
+            if (isPlaying) {
+                audio.play().catch(e => {
+                    console.log('Playback failed:', e);
+                    isPlaying = false;
+                    playBtn.innerHTML = '▶';
+                });
+                playBtn.innerHTML = '⏸';
+                startProgress();
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '▶';
+                stopProgress();
+            }
+        }
+
+        function loadCurrentTrack() {
+            const track = playlist[currentTrack];
+            
+            
+            if (audio) {
+                audio.pause();
+                audio = null;
+                stopProgress();
+            }
+
+            
+            audio = new Audio();
+            audio.crossOrigin = "anonymous";
+            audio.preload = "metadata";
+            
+            
+            audio.addEventListener('loadedmetadata', () => {
+                totalTime = Math.floor(audio.duration) || track.duration;
+                document.getElementById('totalTime').textContent = formatTime(totalTime);
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                if (audio && !isNaN(audio.currentTime)) {
+                    currentTime = Math.floor(audio.currentTime);
+                    updateProgress();
+                }
+            });
+
+            audio.addEventListener('ended', () => {
+                nextTrack();
+            });
+
+            audio.addEventListener('error', (e) => {
+                console.log('Audio error:', e);
+                
+                setTimeout(nextTrack, 1000);
+            });
+
+            
+            audio.src = track.url;
+            audio.volume = volume / 100;
+            
+            
+            document.getElementById('songTitle').textContent = track.title;
+            document.getElementById('songArtist').textContent = track.artist;
+            document.getElementById('totalTime').textContent = formatTime(track.duration);
+            
+            currentTime = 0;
+            totalTime = track.duration;
+            updateProgress();
+        }
+
+        function startProgress() {
+            
+            stopProgress();
+            
+            
+            
+            progressInterval = setInterval(() => {
+                if (audio && isPlaying && !isNaN(audio.currentTime)) {
+                    
+                    if (audio.ended) {
+                        nextTrack();
+                    }
+                }
+            }, 1000);
+        }
+
+        function stopProgress() {
+            clearInterval(progressInterval);
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const currentTimeEl = document.getElementById('currentTime');
+            
+            const progress = (currentTime / totalTime) * 100;
+            progressFill.style.width = progress + '%';
+            currentTimeEl.textContent = formatTime(currentTime);
+        }
+
+        function seekTo(event) {
+            if (!audio || isNaN(audio.duration)) return;
+            
+            const progressBar = event.currentTarget;
+            const clickX = event.offsetX;
+            const width = progressBar.offsetWidth;
+            const newTime = (clickX / width) * audio.duration;
+            
+            audio.currentTime = newTime;
+            currentTime = Math.floor(newTime);
+            updateProgress();
+        }
+
+        function setVolume(value) {
+            volume = value;
+            if (audio) {
+                audio.volume = volume / 100;
+            }
+        }
+
+        function previousTrack() {
+            currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+            loadCurrentTrack();
+            if (isPlaying) {
+                
+                setTimeout(() => {
+                    if (audio) {
+                        audio.play().catch(e => console.log('Playback failed:', e));
+                    }
+                }, 100);
+            }
+        }
+
+        function nextTrack() {
+            currentTrack = (currentTrack + 1) % playlist.length;
+            loadCurrentTrack();
+            if (isPlaying) {
+                
+                setTimeout(() => {
+                    if (audio) {
+                        audio.play().catch(e => console.log('Playback failed:', e));
+                    }
+                }, 100);
+            }
+        }
+
+        function loadTrack() {
+            
+            
+            loadCurrentTrack();
+        }
+
+        function toggleMinimize() {
+            const player = document.getElementById('musicPlayer');
+            const btn = document.getElementById('minimizeBtn');
+            
+            isMinimized = !isMinimized;
+            
+            if (isMinimized) {
+                player.classList.add('minimized');
+                btn.innerHTML = '+';
+            } else {
+                player.classList.remove('minimized');
+                btn.innerHTML = '−';
+            }
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        
+        function initializeDragging() {
+            const player = document.getElementById('musicPlayer');
+            const dragHandle = document.getElementById('dragHandle');
+
+            dragHandle.addEventListener('mousedown', startDragging);
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', stopDragging);
+
+            
+            dragHandle.addEventListener('touchstart', startDraggingTouch);
+            document.addEventListener('touchmove', dragTouch);
+            document.addEventListener('touchend', stopDragging);
+        }
+
+        function startDragging(e) {
+            e.preventDefault();
+            isDragging = true;
+            const player = document.getElementById('musicPlayer');
+            const rect = player.getBoundingClientRect();
+            
+            dragOffset.x = e.clientX - rect.left;
+            dragOffset.y = e.clientY - rect.top;
+            
+            player.style.transition = 'none';
+            document.body.style.userSelect = 'none';
+        }
+
+        function startDraggingTouch(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            isDragging = true;
+            const player = document.getElementById('musicPlayer');
+            const rect = player.getBoundingClientRect();
+            
+            dragOffset.x = touch.clientX - rect.left;
+            dragOffset.y = touch.clientY - rect.top;
+            
+            player.style.transition = 'none';
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            
+            const player = document.getElementById('musicPlayer');
+            const newX = e.clientX - dragOffset.x;
+            const newY = e.clientY - dragOffset.y;
+            
+            
+            const maxX = window.innerWidth - player.offsetWidth;
+            const maxY = window.innerHeight - player.offsetHeight;
+            
+            const boundedX = Math.max(0, Math.min(newX, maxX));
+            const boundedY = Math.max(0, Math.min(newY, maxY));
+            
+            player.style.left = boundedX + 'px';
+            player.style.bottom = 'auto';
+            player.style.top = boundedY + 'px';
+        }
+
+        function dragTouch(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            
+            const touch = e.touches[0];
+            const player = document.getElementById('musicPlayer');
+            const newX = touch.clientX - dragOffset.x;
+            const newY = touch.clientY - dragOffset.y;
+            
+            
+            const maxX = window.innerWidth - player.offsetWidth;
+            const maxY = window.innerHeight - player.offsetHeight;
+            
+            const boundedX = Math.max(0, Math.min(newX, maxX));
+            const boundedY = Math.max(0, Math.min(newY, maxY));
+            
+            player.style.left = boundedX + 'px';
+            player.style.bottom = 'auto';
+            player.style.top = boundedY + 'px';
+        }
+
+        function stopDragging() {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            const player = document.getElementById('musicPlayer');
+            player.style.transition = 'all 0.3s ease';
+            document.body.style.userSelect = '';
+        }
+
+        
+        loadCurrentTrack();
+        initializeDragging();
+    </script>
+</body>
+</html></section><section id="footer"><div class="footer-wrap">
     <p class="copyright">©2025 Notepadium.</p>
     <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
         target="_blank" rel="noopener noreferrer">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
