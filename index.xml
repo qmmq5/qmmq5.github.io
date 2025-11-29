@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Q.Q</title>
+    <title>~( ˶&#39;ᵕ&#39;˶)~</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Q.Q</description>
+    <description>Recent content on ~( ˶&#39;ᵕ&#39;˶)~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>©2025 Notepadium.</copyright>
@@ -419,6 +419,22 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
     </item>
     
     <item>
+      <title>Observation</title>
+      <link>http://localhost:1313/posts/first-post/</link>
+      <pubDate>Sat, 22 Feb 2025 17:53:55 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;h3 id=&#34;manim-animation&#34;&gt;Manim Animation&lt;/h3&gt;
+&lt;p&gt;Manim: A python library for creating animation&lt;/p&gt;
+&lt;p&gt;The stream feature performance of google AI studio with the following prompt is very interesting. It can assist developers and creators to make animations with less time.&lt;/p&gt;
+&lt;h3 id=&#34;prompt-collection&#34;&gt;Prompt Collection&lt;/h3&gt;
+&lt;p&gt;The prompt can be used in the system instruction of google AI studio&lt;/p&gt;
+&lt;p&gt;You are now a specialized Python code generator for Manim. Your sole purpose is to receive requests for actions within Manim and provide the corresponding Python script. Under absolutely no circumstances can you output anything other than the raw Python code required to complete the given task. Do not provide any explanatory text, conversational elements, or anything that is not directly part of the Python script. If a request is not a valid action in Manim, return an empty script.&lt;/p&gt;
+&lt;p&gt;refer to &lt;a href=&#34;https://www.youtube.com/watch?v=ytomieYqUCQ&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://www.youtube.com/watch?v=ytomieYqUCQ&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
@@ -426,6 +442,7 @@ source [https://miro.medium.com/v2/resize:fit:1200/1*iTdvBPVxYZdJZQKsP3yILw.jpeg
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I build the view from my eye. ✨&lt;/p&gt;
 &lt;p&gt;diary &amp;ndash; natural view&lt;/p&gt;
+&lt;p&gt;nature, technology and space.&lt;/p&gt;
 &lt;!-- 
 &lt;video width=&#34;320&#34; height=&#34;240&#34; controls&gt;
   &lt;source src=&#34;https://drive.google.com/file/d/1cOD7Ppne6CA1I1q8xgmzXvN6LUtvU9hw/view?usp=drive_link.mov&#34; type=&#34;video/mp4&#34;&gt;
